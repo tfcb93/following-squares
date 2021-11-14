@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.options {
+    position: absolute;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: rgba(255,255,255,0.7);
+    transition: right 0.5s ease-in;
+    padding-left: 15px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#close-btn {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 2px solid purple;
+    border-radius: 5px;
+    color: purple;
+}
+
+.close-tray {
+    right: -100%;
+    transition: right 0.5s ease-out;
+}
+
+.open-btn {
+    position: absolute;
+    margin: 10px;
+    padding: 10px 25px;
+    right: 0;
+
+    background-color: transparent;
+    border: 2px solid rgb(252, 164, 0, 0.7);
+    border-radius: 4px;
+    color: rgb(252, 164, 0, 0.7);
+
+}
+
+.hide-open-btn {
+    visibility: hidden;
+}
