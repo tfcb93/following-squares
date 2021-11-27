@@ -179,19 +179,3 @@ export class Options {
     }
 
 }
-
-
-
-// - Random shapes
-// 	- Ajustar resizing
-// 	- Ver a possibilidade de incluir curvas de bezier e noise
-// 	- Incluir link pro github
-//
-// - Following squares
-// 	- Ver painel de opções
-// 		- Acho que eu deveria incluir uma classe para controlar as opções
-// 		- O que mais incluir
-// 		- Fazer funcionar direito
-// 	- Resize
-// 	- Melhorar código e aparência
-// 	- GitHub e tornar público

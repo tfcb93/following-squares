@@ -5,6 +5,7 @@ import { Options } from './Options';
 const app = new Application({
     view: document.getElementById('canvas') as HTMLCanvasElement,
     resolution: window.devicePixelRatio || 1,
+    resizeTo: window,
     autoDensity: true,
     width: window.innerWidth,
     height: window.innerHeight,

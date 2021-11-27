@@ -25,7 +25,7 @@ export class Scene extends Container {
         this.screenWidth = screenWidth;
         this.screenHeight = screenHeight;
 
-        this.totalSquares = totalSquares || 10;
+        this.totalSquares = totalSquares || 100;
         this.returnPositionTime = returnPositionTime || 1;
         this.returnToPosition = returnToPosition;
         this.squares = [];

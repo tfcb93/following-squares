@@ -6,9 +6,9 @@ body {
 .options {
     position: absolute;
     right: 0;
-    width: 300px;
+    width: 350px;
     height: 100%;
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.5);
     transition: right 0.5s ease-in;
     padding-left: 15px;
 }
@@ -16,6 +16,17 @@ body {
 .input-container {
     display: flex;
     flex-direction: column;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    
+    & > .section-title {
+        padding-bottom: 15px;
+        font-family: sans-serif;
+        font-size: 18px;
+        color: white;
+    }
 }
 
 #close-btn {
@@ -25,6 +36,7 @@ body {
     border: 2px solid purple;
     border-radius: 5px;
     color: purple;
+    cursor: pointer;
 }
 
 .close-tray {
@@ -44,6 +56,7 @@ body {
 
     font-size: 24px;
     color: rgb(252, 164, 0, 0.7);
+    cursor: pointer;
 
 }
 

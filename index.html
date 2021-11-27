@@ -11,20 +11,28 @@
     <div id="options-tray" class="options close-tray">
         <button id="close-btn">Close option tray (O)</button>
         <div class="input-container">
-            <label for="sqr-qtd">Square quantity</label>
-            <input id="sqr-qtd" name="sqr-qtd" type="range" min="10" max="100" step="10" ></input>
+            <label class="section-title" for="sqr-qtd">Square quantity</label>
+            <input id="sqr-qtd" name="sqr-qtd" type="range" min="10" max="100" step="10" value="100"></input>
         </div>
         <div class="input-container">
-            <label for="return">Return Squares if mouse is idle?</label>
-            <input type="radio" name="return" value="true" id="return-yes" checked />
-            <input type="radio" name="return" value="false" id="return-no" />
+            <span class="section-title">
+                Return Squares if mouse is idle?
+            </span>
+            <div class="radio-group">
+                <input type="radio" name="return" value="true" id="return-yes" checked />
+                <label for="return-yes">YES</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" name="return" value="false" id="return-no" />
+                <label for="return-no">NO</label>
+            </div>
         </div>
         <div class="input-container">
-            <label for="return-timer">Return Timer</label>
+            <label class="section-title" for="return-timer">Return Timer</label>
             <input id="return-timer" name="return-timer" type="range" min="1" max="100" step="10" value="1" ></input>
         </div>
         <div class="input-container">
-            <label for="filter-select">Filters</label>
+            <label class="section-title" for="filter-select">Filters</label>
             <select name="filters" id="filter-select">
                 <option value="">No filter</option>
                 <option value="ASCII">ASCII Filter</option>
