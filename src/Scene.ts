@@ -1,4 +1,4 @@
-import { Container, Graphics, Ticker } from "pixi.js";
+import { Container, Graphics, Ticker, Filter } from "pixi.js";
 import chroma from 'chroma-js';
 import { RGBSplitFilter } from '@pixi/filter-rgb-split';
 import { CRTFilter } from '@pixi/filter-crt';
@@ -32,20 +32,14 @@ export class Scene extends Container {
         
         this.graphic = new Graphics();
 
-        this.colors = chroma
-            .scale(['black', 'red','blue','green']) // create a scale between red and blue
-            .mode('rgb') // in RGB
-            .colors(this.totalSquares) // 10 colors
-            .map(
-                (num) => parseInt(num.replace(/^#/, ''), 16) //it seems pixi doesn't like the hexa string, so we convert it 
-            );
+        this.calculateColors();
         
         
         // this.filters = [new RGBSplitFilter(), new CRTFilter()];
 
         this.addChild(this.graphic);
 
-        this.mousePositions = [...Array(this.totalSquares).keys()].map(() => ({x: -100 , y: -100}));
+        this.resetMousePositions();
         this.generateSquares();
         this.drawSquares();
 
@@ -56,6 +50,20 @@ export class Scene extends Container {
         this.lastMousePosition = {x: -100 , y: -100};
         Ticker.shared.add(this.update.bind(this));
 
+    }
+
+    calculateColors() {
+        this.colors = chroma
+            .scale(['black', 'red','blue','green']) // create a scale between red and blue
+            .mode('rgb') // in RGB
+            .colors(this.totalSquares)
+            .map(
+                (num) => parseInt(num.replace(/^#/, ''), 16) //it seems pixi doesn't like the hexa string, so we convert it 
+            );
+    }
+
+    resetMousePositions() {
+        this.mousePositions = [...Array(this.totalSquares).keys()].map(() => ({x: -100 , y: -100}));
     }
 
     changeSquareQuantity(val) {
@@ -90,6 +98,25 @@ export class Scene extends Container {
             this.graphic.drawRect(x, y, width, height);
             this.graphic.endFill();
         });
+    }
+
+    setFilter(filterArray: Array<Filter>) {
+        this.filters = filterArray;
+    }
+
+    setReturnPositionTime(value: number) {
+        this.returnPositionTime = value;
+    }
+
+    setTotalSquares(value: number) {
+        this.totalSquares = value;
+        this.resetMousePositions();
+        this.calculateColors();
+
+    }
+
+    setShouldReturnToPosition(value: boolean) {
+        this.returnToPosition = value;
     }
 
     moveEvent(e) {
