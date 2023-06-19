@@ -1,0 +1,7 @@
+TODO
+
+- Arrumar o menu
+  - Deixar mais elegante
+- Melhorar os inputs
+- Remover/Mudar o Return Timer
+- Stack de filtros

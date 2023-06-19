@@ -8,48 +8,58 @@
     <title>Following Squares</title>
 </head>
 <body>
-    <div id="options-tray" class="options close-tray">
-        <button id="close-btn">Close option tray (O)</button>
-        <div class="input-container">
-            <label class="section-title" for="sqr-qtd">Square quantity</label>
-            <input id="sqr-qtd" name="sqr-qtd" type="range" min="10" max="100" step="10" value="100"></input>
-        </div>
-        <div class="input-container">
-            <span class="section-title">
-                Return Squares if mouse is idle?
-            </span>
-            <div class="radio-group">
-                <input type="radio" name="return" value="true" id="return-yes" checked />
-                <label for="return-yes">YES</label>
+    <div id="options-tray" class="options">
+        <div class="options-container">
+            <button id="close-btn">X Close option tray</button>
+            <div class="input-container">
+                <label class="section-title" for="sqr-qtd">Square quantity</label>
+                <input id="sqr-qtd" name="sqr-qtd" type="range" min="10" max="100" step="10" value="100"></input>
             </div>
-            <div class="radio-group">
-                <input type="radio" name="return" value="false" id="return-no" />
-                <label for="return-no">NO</label>
+            <div class="input-container">
+                <span class="section-title">
+                    Return Squares if mouse is idle?
+                </span>
+                <div class="radio-group">
+                    <input type="radio" name="return" value="true" id="return-yes" checked />
+                    <label for="return-yes">YES</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="return" value="false" id="return-no" />
+                    <label for="return-no">NO</label>
+                </div>
             </div>
-        </div>
-        <div class="input-container">
-            <label class="section-title" for="return-timer">Return Timer</label>
-            <input id="return-timer" name="return-timer" type="range" min="1" max="100" step="10" value="1" ></input>
-        </div>
-        <div class="input-container">
-            <label class="section-title" for="filter-select">Filters</label>
-            <select name="filters" id="filter-select">
-                <option value="">No filter</option>
-                <option value="ASCII">ASCII Filter</option>
-                <!-- <option value="ColorMap">Color Map Filter</option> -->
-                <option value="CRT">CRT Filter</option>
-                <option value="Dot">Dot Filter</option>
-                <option value="Glitch">Glitch Filter</option>
-                <option value="MotionBlut">Motion blur Filter</option>
-                <option value="KawaseBlur">Kawase blur Filter</option>
-                <option value="Outline">Outline Filter</option>
-                <option value="Pixelate">Pixelate Filter</option>
-                <option value="RGBsplit">RGB split Filter</option>
-            </select>
+            <!-- <div class="input-container">
+                <label class="section-title" for="return-timer">Return Timer</label>
+                <input id="return-timer" name="return-timer" type="range" min="1" max="100" step="10" value="1" ></input>
+            </div> -->
+            <div class="input-container">
+                <label class="section-title" for="filter-select">Filters</label>
+                <select name="filters" id="filter-select">
+                    <option value="">No filter</option>
+                    <option value="ASCII">ASCII Filter</option>
+                    <!-- <option value="ColorMap">Color Map Filter</option> -->
+                    <option value="CRT">CRT Filter</option>
+                    <option value="Dot">Dot Filter</option>
+                    <option value="Glitch">Glitch Filter</option>
+                    <option value="MotionBlut">Motion blur Filter</option>
+                    <option value="KawaseBlur">Kawase blur Filter</option>
+                    <option value="Outline">Outline Filter</option>
+                    <option value="Pixelate">Pixelate Filter</option>
+                    <option value="RGBsplit">RGB split Filter</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <h3>Instructions</h3>
+                <ul>
+                    <li>To open this tray press O. Press again to close it.</li>
+                    <li>The square quantity increases and decreases the quantity of squares in it.</li>
+                    <li>You can stack up to x filters on the filter menu.</li>
+                </ul>
+            </div>
         </div>
     </div>
     <button class="open-btn" id="open-btn">
-        O
+        Options
     </button>
     <canvas id="canvas" width="640" height="480"></canvas>
 </body>
